@@ -33,27 +33,27 @@ namespace Business.Concrete
         public IDataResult<List<Product>> GetAll()
         {
             //İş kodları
-            return new SuccessDataResult<List<Product>>(_productDal.GetAll(),true,"Ürünler listelendi");
+            return new SuccessDataResult<List<Product>>(_productDal.GetAll(),Messages.ProductsListed);
         }
 
         public IDataResult<List<Product>> GetAllByCategoryId(int categoryId)
         {
-            return _productDal.GetAll(p=>p.CategoryId == categoryId);
+            return new SuccessDataResult<List<Product>>(_productDal.GetAll(p=>p.CategoryId == categoryId),Messages.ProductsListed);
         }
 
         public IDataResult<Product> GetById(int productId)
         {
-            return _productDal.Get(p=>p.ProductId == productId);
+            return new SuccessDataResult<Product>(_productDal.Get(p=>p.ProductId == productId));
         }
 
         public IDataResult<List<Product>> GetByUnitPrice(decimal min, decimal max)
         {
-            return _productDal.GetAll(p => p.UnitPrice <= max && p.UnitPrice >= min);
+            return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.UnitPrice <= max && p.UnitPrice >= min),Messages.ProductsListed);
         }
 
         public IDataResult<List<ProductDetailDto>> GetProductDetails()
         {
-            return _productDal.GetProductDetails();
+            return new SuccessDataResult<List<ProductDetailDto>>(_productDal.GetProductDetails());
         }
     }
 }
