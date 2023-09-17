@@ -1,4 +1,5 @@
-﻿using DataAccess.Concrete.InMemory;
+﻿using Core.Utilities.Results;
+using DataAccess.Concrete.InMemory;
 using Entities.Concrete;
 using Entities.DTOs;
 using System;
@@ -15,5 +16,7 @@ namespace Business.Abstract
         List<Product> GetAllByCategoryId(int categoryId);
         List<Product> GetByUnitPrice(decimal min, decimal max);
         List<ProductDetailDto> GetProductDetails();
+        Product GetById(int productId);
+        IResult Add(Product product);
     }
 }
