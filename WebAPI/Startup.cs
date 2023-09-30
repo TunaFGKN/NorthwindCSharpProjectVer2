@@ -18,8 +18,8 @@ namespace WebAPI
         {
             //Autofac, Ninject, CastleWindsor, StructureMap, LightInject -->IoC Container
             services.AddControllers();
-            services.AddSingleton<IProductService,ProductManager>(); // biri ctorda iproductservice isterse ona new productmanager ver
-            services.AddSingleton<IProductDal,EfProductDal>();
+            //services.AddSingleton<IProductService,ProductManager>(); // biri ctorda iproductservice isterse ona new productmanager ver
+            //services.AddSingleton<IProductDal,EfProductDal>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
