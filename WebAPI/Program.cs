@@ -34,5 +34,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+Console.ForegroundColor = ConsoleColor.Yellow;
+Console.WriteLine("App is working");
 
 app.Run();
