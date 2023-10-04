@@ -15,33 +15,33 @@ namespace ConsoleUI
             
             
             //CategoryManagerTest();
-            ProductManagerTest();
+            //ProductManagerTest();
         }
 
-        private static void CategoryManagerTest()
-        {
-            CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
-            foreach (var category in categoryManager.GetAll())
-            {
-                Console.WriteLine(category.CategoryName);
-            }
-        }
-        private static void ProductManagerTest()
-        {          
-            ProductManager productManager = new ProductManager(new EfProductDal());
-            var result = productManager.GetProductDetails();
-            if (result.Success==true)
-            {
-                foreach (var product in productManager.GetProductDetails().Data)
-                {
-                    Console.WriteLine(product.ProductName + " / " + product.CategoryName);
-                }
-            }
-            else
-            {
-                Console.WriteLine(result.Message);
-            }
+        //private static void CategoryManagerTest()
+        //{
+        //    CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
+        //    foreach (var category in categoryManager.GetAll())
+        //    {
+        //        Console.WriteLine(category.CategoryName);
+        //    }
+        //}
+        //private static void ProductManagerTest()
+        //{          
+        //    ProductManager productManager = new ProductManager(new EfProductDal());
+        //    var result = productManager.GetProductDetails();
+        //    if (result.Success==true)
+        //    {
+        //        foreach (var product in productManager.GetProductDetails().Data)
+        //        {
+        //            Console.WriteLine(product.ProductName + " / " + product.CategoryName);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine(result.Message);
+        //    }
             
-        }
+        //}
     }
 }

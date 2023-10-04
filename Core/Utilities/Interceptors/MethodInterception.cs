@@ -4,6 +4,7 @@ namespace Core.Utilities.Interceptors
 {
     public abstract class MethodInterception : MethodInterceptionBaseAttribute
     {
+        // invocation is business method
         protected virtual void OnBefore(IInvocation invocation) 
         { 
 
